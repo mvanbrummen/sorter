@@ -1,6 +1,6 @@
 # Sorter
 
-##About
+## About
 The sorter project is a console application. 
 
 This application receives a text file, sorts the content in alphabetical order and generates a result in a text file
@@ -12,7 +12,7 @@ The console app:
 * Orders the names by last name followed by first name.
 * Creates a new text file called < input file name >-sorted.txt with the list of sorted
 
-###For example
+### For example
 * if the input file contains:
 ```
 BAKER, THEODORE
