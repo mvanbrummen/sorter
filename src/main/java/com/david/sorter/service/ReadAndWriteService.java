@@ -38,6 +38,8 @@ public class ReadAndWriteService {
         try (BufferedWriter bw = Files.newBufferedWriter(fullPath)) {
             sortedLines.forEach(line -> ReadAndWriteService.writeToFile(bw, line));
         }
+
+        log.info("the sorted file is at : %s".formatted(fileName));
     }
 
 
@@ -46,7 +48,7 @@ public class ReadAndWriteService {
             bw.write(line);
             bw.write("\r\n");
         } catch (IOException e) {
-            log.error("A error has ocurred : " + e);
+            log.error("A error has ocurred while writing to file: %s".formatted(e));
         }
     }
 }

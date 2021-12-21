@@ -15,6 +15,7 @@ import java.util.stream.Stream;
 @Component
 @RequiredArgsConstructor
 public class ApplicationRunner implements CommandLineRunner {
+    public static final String STRING_DELIMITER = ",";
     private final ReadAndWriteService readAndWriteService;
 
     @Override
@@ -40,7 +41,7 @@ public class ApplicationRunner implements CommandLineRunner {
 
 
     protected void readWriteFile(String fileNames) throws IOException {
-        var split = fileNames.split(",");
+        var split = fileNames.split(STRING_DELIMITER);
         if (Arrays.stream(split).count() != 2) {
            log.error("Filenames to read from and to write to are required");
             return;
@@ -54,7 +55,6 @@ public class ApplicationRunner implements CommandLineRunner {
         final var sortedLines = getFullNameListSorted.apply(readlines);
 
         readAndWriteService.writeToFile(writeToFileName, sortedLines);
-
     }
 
 
@@ -67,7 +67,7 @@ public class ApplicationRunner implements CommandLineRunner {
 
     public record FullName (String firstName, String lastName) {
         static FullName from(String personName) {
-            var split = personName.split(",");
+            var split = personName.split(STRING_DELIMITER);
             var firstName = split[1];
             var lastName = split[0];
 
