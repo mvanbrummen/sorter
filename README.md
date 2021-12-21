@@ -47,7 +47,7 @@ SMITH, ANDREW
 ### Run it with a Spring boot
 
  ```
- mvn spring-boot:run -f pom.xml -Dspring-boot.run.arguments="C:\gdva\names.txt C:\gdva\my-file-sorted.txt"
+ mvn spring-boot:run -f pom.xml -Dspring-boot.run.arguments="C:\gdva\names.txt,C:\gdva\my-file-sorted.txt"
  ```
 
 ### Run it with a Spring boot
