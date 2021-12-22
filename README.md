@@ -41,16 +41,19 @@ SMITH, ANDREW
 
 * JDK 17
 * Maven
-
+* A text file containing a list of names following this formart: surname, first name
+ ```
+ BAKER, THEODORE
+ ```
 ## Run the application
 
-### Run it with a Spring boot
+### Run it with Spring boot
 
  ```
  mvn spring-boot:run -f pom.xml -Dspring-boot.run.arguments="C:\gdva\names.txt"
  ```
 
-### Run it with a Spring boot
+### Run it with java
 
  ```
  java -jar target/sorter-0.0.1-SNAPSHOT.jar C:\gdva\names.txt
