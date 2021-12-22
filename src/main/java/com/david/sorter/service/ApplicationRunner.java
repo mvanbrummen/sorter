@@ -40,21 +40,13 @@ public class ApplicationRunner implements CommandLineRunner {
     }
 
 
-    protected void readWriteFile(String fileNames) throws IOException {
-        var split = fileNames.split(STRING_DELIMITER);
-        if (Arrays.stream(split).count() != 2) {
-           log.error("Filenames to read from and to write to are required");
-            return;
-        }
+    protected void readWriteFile(final String fileName) throws IOException {
 
-        var readFromFileName = split[0];
-        var writeToFileName = split[1];
-
-        final var readlines = readAndWriteService.readFromFile(readFromFileName);
+        final var readlines = readAndWriteService.readFromFile(fileName);
 
         final var sortedLines = getFullNameListSorted.apply(readlines);
 
-        readAndWriteService.writeToFile(writeToFileName, sortedLines);
+        readAndWriteService.writeToFile(fileName, sortedLines);
     }
 
 
@@ -67,11 +59,8 @@ public class ApplicationRunner implements CommandLineRunner {
 
     public record FullName (String firstName, String lastName) {
         static FullName from(String personName) {
-            var split = personName.split(STRING_DELIMITER);
-            var firstName = split[1];
-            var lastName = split[0];
-
-            return new FullName(firstName, lastName);
+            final var split = personName.split(STRING_DELIMITER);
+            return new FullName( split[1],  split[0]);
         }
 
         public String format() {

@@ -47,11 +47,11 @@ SMITH, ANDREW
 ### Run it with a Spring boot
 
  ```
- mvn spring-boot:run -f pom.xml -Dspring-boot.run.arguments="C:\gdva\names.txt C:\gdva\my-file-sorted.txt"
+ mvn spring-boot:run -f pom.xml -Dspring-boot.run.arguments="C:\gdva\names.txt"
  ```
 
 ### Run it with a Spring boot
 
  ```
- java -jar target/sorter-0.0.1-SNAPSHOT.jar C:\gdva\names.txt,C:\gdva\my-file-sorted.txt
+ java -jar target/sorter-0.0.1-SNAPSHOT.jar C:\gdva\names.txt
  ```
