@@ -41,7 +41,10 @@ SMITH, ANDREW
 
 * JDK 17
 * Maven
-
+* A text file containing a list of names following this formart: surname, first name
+ ```
+ BAKER, THEODORE
+ ```
 ## Run the application
 
 ### Run it with a Spring boot
