@@ -41,8 +41,8 @@ SMITH, ANDREW
 
 * JDK 17
 * Maven
-* A text file containing a list of names following this formart: surname, first name
 * For Testing purposes, Please copy names.txt file (src\test\resources) and paste it in C:/temp/names.txt
+* A text file containing a list of names following this formart: surname, first name
  ```
  BAKER, THEODORE
  ```
