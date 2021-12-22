@@ -7,12 +7,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.context.ApplicationContext;
 
+import java.io.IOException;
+
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 
-@SpringBootTest(args = "C:\\GDVA\\names.txt,C:\\GDVA\\sorted.txt")
+@SpringBootTest(args = "C:\\temp\\names.txt")
 class ApplicationRunnerIntegrationTest {
 
     @Autowired
@@ -21,11 +22,16 @@ class ApplicationRunnerIntegrationTest {
     @SpyBean
     ApplicationRunner applicationRunner;
 
+    @SpyBean
+    ReadAndWriteService readAndWriteService;
+
     @Autowired
     private ApplicationContext context;
 
     @Test
-    public void verify_application_runner_runs() {
+    public void verify_application_runner_runs() throws IOException {
         verify(applicationRunner, times(1)).run(any());
+        verify(readAndWriteService, atLeastOnce()).writeToFile(any(String.class), any());
+        verify(readAndWriteService, atLeastOnce()).readFromFile(any(String.class));
     }
 }

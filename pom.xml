@@ -33,6 +33,12 @@
 			<version>1.18.22</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-inline</artifactId>
+			<version>4.1.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -40,6 +46,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+<!--				TODO: Attempt to pass args for Testing -->
+<!--				<configuration>-->
+<!--					<arguments>-->
+<!--						<argument>src/test/resources/names.txt</argument>-->
+<!--					</arguments>-->
+<!--				</configuration>-->
 			</plugin>
 		</plugins>
 	</build>
