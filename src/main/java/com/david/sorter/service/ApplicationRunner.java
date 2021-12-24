@@ -52,8 +52,6 @@ public class ApplicationRunner implements CommandLineRunner {
 
     public static Function<Stream<String>, Stream<String>> getFullNameListSorted =
             stringStream -> stringStream.map(FullName::from)
-                .sorted(Comparator.comparing(FullName::lastName)
-                        .thenComparing(FullName::firstName))
                 .map(FullName::format);
 
 
