@@ -65,6 +65,6 @@ public class ReadAndWriteService {
         final var inputFileFullPath = new File(name).toPath();
         final var fileNameWithoutExtension = inputFileFullPath.getFileName().toString().replaceAll(EXT_PATTERN, "");
 
-        return "%s\\%s-sorted.txt".formatted(inputFileFullPath.getParent().toString(), fileNameWithoutExtension);
+        return "%s/%s-sorted.txt".formatted(inputFileFullPath.getParent().toString(), fileNameWithoutExtension);
     };
 }

@@ -13,7 +13,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 
-@SpringBootTest(args = "C:\\temp\\names.txt")
+@SpringBootTest(args = "/Users/mvanbrummen/workspace/sorter/src/test/resources/names.txt")
 class ApplicationRunnerIntegrationTest {
 
     @Autowired

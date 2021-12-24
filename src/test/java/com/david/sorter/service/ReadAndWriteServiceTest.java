@@ -43,8 +43,8 @@ class ReadAndWriteServiceTest {
 
     @Test
     public void generateOutputFileName() {
-        final var fileName = "C:\\test\\names.txt";
-        final var outputfileNameExpected = "C:\\test\\names-sorted.txt";
+        final var fileName = "/Users/mvanbrummen/workspace/sorter/src/test/resources/names.txt";
+        final var outputfileNameExpected = "/Users/mvanbrummen/workspace/sorter/src/test/resources/names-sorted.txt";
 
         final var result = service.generateOutputFileName.apply(fileName);
 
